@@ -1,7 +1,7 @@
 'use strict'
 var gBallSize = 100
-function onBallClick() {
-    var ball = document.querySelector('.ball')
+function onBallClick(elBall, maxDiameter) {
+    var ball = elBall
     var ballSizeToAdd = getRandomIntInclusive(20, 60)
    console.dir(ball)
     ball.style.width = gBallSize + ballSizeToAdd
@@ -10,12 +10,11 @@ function onBallClick() {
     gBallSize += ballSizeToAdd
     ball.style.backgroundColor = getRandomColor()
 
-    if (gBallSize > 400) {
+    if (gBallSize > maxDiameter) {
         gBallSize = 100
         ball.style.width = gBallSize
         ball.style.height = gBallSize
         ball.innerText = gBallSize
-        ball.style.backgroundColor = 'dodgerblue'
     }
 
    
